@@ -88,3 +88,5 @@
 
 [ghi]
   token    = !security 2>&1 >/dev/null find-generic-password -gs ghi.token | ruby -e 'print $1 if STDIN.gets =~ /^password: \\\"(.*)\\\"$/'
+[push]
+	default = simple
