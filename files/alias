@@ -3,10 +3,13 @@
 # = * used with different shells =
 # ================================
 
+
+# Rails aliases
 alias r="rails"
 alias c="pbcopy"
 alias p="pbpaste"
 
+# Git aliases on shell level and atop the git zsh plugin
 alias g="git"
 alias ga="git add"
 alias gai="git add -i"
@@ -16,5 +19,9 @@ alias gss="git status"
 alias gsd="git diff --staged"
 alias gpa="git push --all"
 
+
+# =================================
+# = Various Helpers and Shortcuts =
+# =================================
 # show calender with weeks:
 alias kw="ncal -w"
