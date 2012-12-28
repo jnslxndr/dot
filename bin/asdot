@@ -1,44 +1,66 @@
 #!/usr/bin/env sh
 
-function normalizeDotfile () {
-  mv $1 ${1#*.}
-}
-
-function normalizeDotfilesInDir ($D) {
-  $current = `pwd`
-  cd $1
-  for f in `ls -a| grep "^\.[A-z0-9]"`
-  do
-    normalizeDotfile($f)
-  done
-  cd $current
-}
-
-function linkDotFile ($filename) {
-  ln -s ${DOT_DIR}/files/$filename ${HOME}/"."$1
-}
-
 # export the dotfile directory
 export DOT_DIR=${HOME}/dot
 
-if [[ -d $DOT_DIR ]]; then
+function list_dots () {
+  for a in `ls -a|grep "^\.[A-z0-9]"`; do
+    echo $a \(`file $a`\)
+  done
+}
+
+# =====================================
+# = Check for file or directory first =
+# =====================================
+if [[ "list" == $1 ]]; then
+  echo "Listing all .files and directories in your HOME folder"
+  list_dots
+elif [[ (-L $1) ]]; then
+  echo "File is already a link!"
+  if [[ $2 == "-f" ]]; then
+    echo " ... but you want to force it. Ok, here we go:"
+  else
+    exit -1
+  fi
+elif [[ !(-e $1) || !(-d $1) ]]; then
+  echo "File or directory does not exist"
+  exit -1
+fi
+
+# The file we want to link
+FILE="`pwd`/`basename $1`"
+echo "File to link: $FILE"
+
+
+if [[ ! -d "$DOT_DIR" ]]; then
   echo "No dot file directory yet. Creating one as "$DOT_DIR
   mkdir -p $DOT_DIR/files
   mkdir -p $DOT_DIR/bin
 fi
 
-if [[ -f $1 ]]; then
-  $NAME = ${1#*.} # get rid of the dot
+
+if [[ -f ${FILE} ]]; then
+  
+  NAME=${FILE#*.}
+  TO_FILE=$DOT_DIR/files/$NAME
+  
+  echo "Archiving $FILE in dotfile folder as $TO_FILE"
+  if [[ $FILE == "" || $TO_FILE == "" ]]; then exit -1; fi
   
   # Make sure we have a valid directory
   mkdir -p $DOT_DIR/files
   
-  echo "Moving "$1
-  mv $1 $DOT_DIR/files/$NAME
+  # Move only, if the file does not already exist:
+  if [[ !(-f $TO_FILE) ]]; then
+    echo "Moving "$FILE
+    mv $FILE $TO_FILE
+  fi
   
-  echo "Linking"
-  ln -s $DOT_DIR/files/$NAME ${HOME}/$1
-  
+  echo "Linking $TO_FILE $FILE"
+  ln -fhs $TO_FILE $FILE
+
+elif [[ -L "${HOME}/$1" ]]; then
+    echo "You are trying to link a already linked file!"
 else
   exit -1
 fi
