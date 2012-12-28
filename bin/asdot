@@ -22,7 +22,7 @@ elif [[ (-L $1) ]]; then
   else
     exit -1
   fi
-elif [[ !(-e $1) || !(-d $1) ]]; then
+elif [[ !(-f $1) && !(-d $1) ]]; then
   echo "File or directory does not exist"
   exit -1
 fi
