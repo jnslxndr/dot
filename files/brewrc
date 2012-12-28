@@ -1,0 +1,9 @@
+# ============================================================================
+# === To use Homebrew ===
+HOMEBREW=$HOME/.homebrew
+
+## Utils installed through Python & Homebrew
+PATH=$HOMEBREW/share/python:${PATH}
+PATH=$HOMEBREW/bin:$HOMEBREW/sbin:$PATH
+
+export PATH

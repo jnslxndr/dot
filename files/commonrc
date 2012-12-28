@@ -1,0 +1,58 @@
+# ============================
+# = General DotFile for Jens =
+# ============================
+
+# ==========================
+# = Common Shell Resources =
+source $HOME/.alias
+
+# ============================================================================
+# === GIT Additions & Coloring ===
+
+# to use textmate as the default $GIT_EDITOR
+# export GIT_EDITOR='mate -wl1'
+export GIT_EDITOR='vim'
+
+
+# ============================================================================
+# === PATH Manipulations ===
+
+# set PATH so it includes user's private bin if it exists
+if [ -d ${HOME}/_bin ] ; then
+    PATH=${HOME}/_bin:${PATH}
+fi
+
+# Git deploy (https://github.com/aizatto/git-deploy.git)
+PATH=${HOME}/_bin/git-deploy/bin:${PATH}
+
+# Pear PHP Packages
+PATH=/usr/local/pear/bin:${PATH}
+
+# xgettext
+PATH=/Applications/Poedit.app/Contents/MacOS:${PATH}
+
+# set exec_path for adobe flex (opensource)
+PATH=~/_devel/SDKs/flex/bin:${PATH}
+
+# ios dev: (old XCode pre 4.3 .... )
+# PATH=${PATH}:/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin
+
+# finally export:
+export PATH
+
+# ============================================================================
+# === Nodejs ===
+export NODE_PATH="'$(npm root -g)'"
+
+
+# ============================================================================
+# === Other ===
+ANT_HOME=/usr/local/ant
+export ANT_HOME
+
+
+# ============================================================================
+# === My Own ===
+TODOTXT_PLAIN=0 # shut off plain mode and use fancy colors
+export TODOTXT_PLAIN
+export TODO_DIR=${HOME}"/Documents/todo"

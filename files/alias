@@ -1,0 +1,20 @@
+# ================================
+# = Alias Commands File          =
+# = * used with different shells =
+# ================================
+
+alias r="rails"
+alias c="pbcopy"
+alias p="pbpaste"
+
+alias g="git"
+alias ga="git add"
+alias gai="git add -i"
+alias gaa="git add -p"
+alias gs="git status -s"
+alias gss="git status"
+alias gsd="git diff --staged"
+alias gpa="git push --all"
+
+# show calender with weeks:
+alias kw="ncal -w"
