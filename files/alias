@@ -3,6 +3,9 @@
 # = * used with different shells =
 # ================================
 
+# shell helpers
+alias ll="ls -lhp"
+alias la="ls -lAhp"
 
 # Rails aliases
 alias r="rails"

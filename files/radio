@@ -1,0 +1,4 @@
+
+alias deepmix="mpg123 -@ http://deepmix.ru/deepmix128.pls"
+alias fm4="mpg123 -@ http://mp3stream1.apasf.apa.at:8000/"
+

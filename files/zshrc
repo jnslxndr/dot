@@ -1,8 +1,5 @@
-# Import Homebrew specifics first!
-source .brewrc
-
 # Get common resources
-source .commonrc
+source ${HOME}/.commonrc
 
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
