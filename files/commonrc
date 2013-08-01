@@ -67,6 +67,6 @@ export TODO_DIR=${HOME}"/Documents/todo"
 source ${HOME}/.brewrc
 
 # RVM
-if [[ -s $HOME/.rvm/scripts/rvm ]] then
+if [[ -s $HOME/.rvm/scripts/rvm ]]; then
   source $HOME/.rvm/scripts/rvm
 fi
