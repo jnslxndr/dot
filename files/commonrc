@@ -11,13 +11,19 @@ export LC_ALL=de_DE.UTF-8
 # = Common Shell Resources =
 source $HOME/.alias
 
+
+# ========================================================================
+# === Set EDITOR ....
+export EDITOR='subl -w'
+
+
 # ========================================================================
 # === GIT Additions & Coloring ===
 
 # to use textmate as the default $GIT_EDITOR
 # export GIT_EDITOR='mate -wl1'
-export GIT_EDITOR='vim'
-
+# export GIT_EDITOR='vim'
+export GIT_EDITOR=${EDITOR}
 
 # ========================================================================
 # === PATH Manipulations ===
