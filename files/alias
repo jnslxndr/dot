@@ -33,3 +33,6 @@ alias kw="ncal -w"
 ## Node Webkit
 # alias to nw
 alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit"
+
+## Sublime Text
+alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
