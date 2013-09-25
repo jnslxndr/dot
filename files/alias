@@ -28,3 +28,8 @@ alias gpa="git push --all"
 # =================================
 # show calender with weeks:
 alias kw="ncal -w"
+
+
+## Node Webkit
+# alias to nw
+alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit"
