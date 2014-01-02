@@ -36,3 +36,6 @@ alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit"
 
 ## Sublime Text
 alias subl='open -a "Sublime Text"'
+
+## ifconfig for en0
+alias net="ifconfig en0"

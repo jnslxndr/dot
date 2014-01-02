@@ -132,7 +132,7 @@ export CASE_SENSITIVE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(git textmate ruby github brew ssh-agent osx rails rails3 git-flow gem bundler cake lol)
-plugins=(textmate ruby brew osx rails rails3 git-flow gem bundler cake rake  lol git github coffee bower rvm)
+plugins=(textmate ruby brew osx rails git-flow gem bundler cake rake  lol git github coffee bower rvm)
 # plugins=(osx git github)
 
 source $ZSH/oh-my-zsh.sh
