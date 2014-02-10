@@ -3,6 +3,9 @@
 # = * used with different shells =
 # ================================
 
+#disk space
+alias space='df -h|grep "\/dev\/disk"'
+
 # shell helpers
 alias ll="ls -lhp"
 alias la="ls -lAhp"
@@ -35,7 +38,7 @@ alias kw="ncal -w"
 alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit"
 
 ## Sublime Text
-alias subl='open -a "Sublime Text"'
+alias subl="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
 
 ## ifconfig for en0
 alias net="ifconfig en0"

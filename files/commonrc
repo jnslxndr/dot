@@ -41,9 +41,6 @@ PATH=/usr/local/pear/bin:${PATH}
 # xgettext
 PATH=/Applications/Poedit.app/Contents/MacOS:${PATH}
 
-# ios dev: (old XCode pre 4.3 .... )
-# PATH=${PATH}:/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin
-
 # finally export:
 export PATH
 
