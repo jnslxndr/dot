@@ -1,7 +1,7 @@
 [core]
   editor = $GIT_EDITOR
   whitespace=fix,-indent-with-non-tab,trailing-space,space-before-tab,cr-at-eol
-  excludesfile = /Users/jens/.gitignore
+  excludesfile = ~/.gitignore
   quotepath = false
   # autocrlf = input
 
@@ -22,6 +22,7 @@
   frag = magenta bold
   old = red bold
   new = green bold
+  whitespace = red reverse
 
 [color "status"]
   added = yellow
@@ -31,20 +32,21 @@
 [color]
   ui = auto
 
-[color "diff"]
-  whitespace = red reverse
-
 ## aliases:
 [alias]
   s  = status
   st = status
   cl = clone
-  ci = commit --no-verify
+  cf = commit --no-verify
   c  = commit
-  all= commit -a
-  cia = commit --amend
+  call= commit -a
+  ca = commit --amend
+  a = add
+  aa = add --all
+  ap = add --patch
   br = branch
   co = checkout
+  cb = checkout -b
   df = diff
   pall = push --all
   last = log -1 HEAD
