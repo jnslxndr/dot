@@ -6,12 +6,12 @@
 
 export DOT_DIR=${HOME}/dot
 
-function linkDotFile() {  
+function linkDotFile() {
   target=${HOME}/"."$1
   source=${DOT_DIR}/files/$1
-  
+
   echo "Linking "$source" to  "$target
-  ln -s $source $target
+  ln -f -s $source $target
 }
 
 for df in `ls files`;

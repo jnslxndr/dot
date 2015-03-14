@@ -6,7 +6,6 @@ export LANGUAGE=de_DE.UTF-8
 export LANG=de_DE.UTF-8
 export LC_ALL=de_DE.UTF-8
 
-
 # ==========================
 # = Common Shell Resources =
 source $HOME/.alias
@@ -23,7 +22,7 @@ export EDITOR='subl -w'
 # to use textmate as the default $GIT_EDITOR
 # export GIT_EDITOR='mate -wl1'
 # export GIT_EDITOR='vim'
-export GIT_EDITOR=${EDITOR}
+export GIT_EDITOR='vim'
 
 # ========================================================================
 # === PATH Manipulations ===
@@ -46,12 +45,7 @@ export PATH
 
 # ========================================================================
 # === Nodejs ===
-export NODE_PATH="$(npm root -g)"
-
-# ========================================================================
-# === Other ===
-ANT_HOME=/usr/local/ant
-export ANT_HOME
+# export NODE_PATH="$(npm root -g)"
 
 
 # ========================================================================
@@ -65,10 +59,23 @@ export TODO_DIR=${HOME}"/Documents/todo"
 # === Radios:
 . $HOME/.radio
 
-# Import Homebrew specifics first!
+# Import Homebrew specifics!
 source ${HOME}/.brewrc
 
 # RVM
 if [[ -s $HOME/.rvm/scripts/rvm ]]; then
   source $HOME/.rvm/scripts/rvm
 fi
+export PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
+
+# for go
+export GOROOT=$HOMEBREW/opt/go/libexec
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
+# NVM
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
+# export PATH=/Users/jens/Library/Python/2.7/bin:${PATH}
+# . ${HOME}/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh

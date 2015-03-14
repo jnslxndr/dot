@@ -2,15 +2,16 @@
   editor = $GIT_EDITOR
   whitespace=fix,-indent-with-non-tab,trailing-space,space-before-tab,cr-at-eol
   excludesfile = ~/.gitignore
-  quotepath = false
+	quotepath = false
   # autocrlf = input
 
 [apply]
   whitespace = fix
 
 [user]
-  name = jens
-  email = jens@lea.io
+	name = jens
+	email = jens@lea.io
+	signingkey = 3687AE8F0378584A
 
 [color "branch"]
   current = yellow reverse
@@ -82,6 +83,8 @@
   publish = !legit publish \"$@\"
   graft = !legit graft \"$@\"
 
+  unpack-refs = "!bash -c 'IFS=$''\\n''; for f in $(git show-ref --heads); do /bin/echo ''Writing  '' $(echo $f | cut -c42-); echo $(echo $f | cut -c1-40) > \"${GIT_DIR:-.git}/$(echo $f | cut -c42-)\"; done'"
+	wa = log --diff-filter=A
 [merge]
   tool = opendiff
 
@@ -95,3 +98,13 @@
 [push]
   default = matching
 
+[mergetool]
+	keepBackup = true
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true

@@ -12,6 +12,8 @@ alias la="ls -lAhp"
 
 # Rails aliases
 alias r="rails"
+
+# OSX shorts
 alias c="pbcopy"
 alias p="pbpaste"
 
@@ -24,7 +26,12 @@ alias gs="git status -s"
 alias gss="git status"
 alias gsd="git diff --staged"
 alias gpa="git push --all"
-
+alias gta="git tag -a"
+alias gmno="git merge --no-ff"
+alias gf="git flow"
+alias gff="git flow feature"
+alias gffs="git flow feature start"
+alias gfff="git flow feature finish"
 
 # =================================
 # = Various Helpers and Shortcuts =
@@ -42,3 +49,14 @@ alias subl="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
 
 ## ifconfig for en0
 alias net="ifconfig en0"
+
+## todo.txt
+alias t="todo.sh"
+alias ta="t add"
+alias te="t edit"
+alias tl="t ls"
+alias tw="t ls @work"
+
+## network processes
+alias netps="sudo lsof -i -n -P"
+
