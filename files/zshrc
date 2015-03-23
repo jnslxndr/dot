@@ -9,7 +9,7 @@ export ZSH=$HOME/.oh-my-zsh
 # export ZSH_THEME="arrow"
 # export ZSH_THEME="aussiegeek"
 # export ZSH_THEME="awesomepanda"
-# export ZSH_THEME="bira"
+export ZSH_THEME="bira"
 # export ZSH_THEME="blinks"
 # export ZSH_THEME="candy"
 # export ZSH_THEME="clean"
@@ -69,7 +69,7 @@ export ZSH=$HOME/.oh-my-zsh
 # export ZSH_THEME="mikeh"
 # export ZSH_THEME="miloshadzic"
 # export ZSH_THEME="minimal"
-export ZSH_THEME="mortalscumbag"
+# export ZSH_THEME="mortalscumbag"
 # export ZSH_THEME="mrtazz"
 # export ZSH_THEME="murilasso"
 # export ZSH_THEME="muse"
@@ -101,7 +101,7 @@ export ZSH_THEME="mortalscumbag"
 # export ZSH_THEME="suvash"
 # export ZSH_THEME="takashiyoshida"
 # export ZSH_THEME="terminalparty"
-# export ZSH_THEME="theunraveler"
+export ZSH_THEME="theunraveler"
 # export ZSH_THEME="tjkirch"
 # export ZSH_THEME="tonotdo"
 # export ZSH_THEME="trapd00r"
@@ -111,7 +111,7 @@ export ZSH_THEME="mortalscumbag"
 # export ZSH_THEME="wuffers"
 # export ZSH_THEME="xiong-chiamiov-plus"
 # export ZSH_THEME="xiong-chiamiov"
-export ZSH_THEME="ys"
+# export ZSH_THEME="ys"
 # export ZSH_THEME="zhann"
 
 ##############################################################################
@@ -129,7 +129,7 @@ export CASE_SENSITIVE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(git textmate ruby github brew ssh-agent osx rails rails3 git-flow gem bundler cake lol)
 # plugins=(textmate ruby brew osx rails git-flow gem bundler cake rake  lol gitfast git-extras gitignore github coffee bower rvm vagrant)
-plugins=(brew osx git-flow cake gitfast coffee bower)
+plugins=(brew osx git-flow cake git cucknorris battery autoenv coffee bower)
 # plugins=(osx git github)
 
 source $ZSH/oh-my-zsh.sh
