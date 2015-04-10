@@ -11,7 +11,6 @@
 [user]
 	name = jens
 	email = jens@lea.io
-	signingkey = 3687AE8F0378584A
 
 [color "branch"]
   current = yellow reverse
@@ -108,3 +107,4 @@
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
 	required = true
+
