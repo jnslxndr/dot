@@ -44,7 +44,7 @@
   a = add
   aa = add --all
   ap = add --patch
-  br = branch
+  b = branch -v
   co = checkout
   cb = checkout -b
   df = diff
@@ -53,9 +53,9 @@
   unstage = reset HEAD --
   changes=diff --name-status -r
   diffstat=diff --stat -r
-
-  # graphviz
-  graphviz = "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
+  uncommit = reset --soft HEAD^
+  t = tag -l
+  r = remote -v
 
   # SERVE
   serve = !git daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
@@ -84,6 +84,7 @@
 
   unpack-refs = "!bash -c 'IFS=$''\\n''; for f in $(git show-ref --heads); do /bin/echo ''Writing  '' $(echo $f | cut -c42-); echo $(echo $f | cut -c1-40) > \"${GIT_DIR:-.git}/$(echo $f | cut -c42-)\"; done'"
 	wa = log --diff-filter=A
+
 [merge]
   tool = opendiff
 
@@ -99,10 +100,12 @@
 
 [mergetool]
 	keepBackup = true
+
 [filter "media"]
 	required = true
 	clean = git media clean %f
 	smudge = git media smudge %f
+
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
