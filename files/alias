@@ -60,3 +60,5 @@ alias tw="t ls @work"
 ## network processes
 alias netps="sudo lsof -i -n -P"
 
+# backup installed homebrew packages for reinstall
+alias brewback="brews | sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/ /g'"

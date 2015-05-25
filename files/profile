@@ -2,9 +2,12 @@
 # = General DotFile for Jens =
 # ============================
 
-export LANGUAGE=de_DE.UTF-8
-export LANG=de_DE.UTF-8
-export LC_ALL=de_DE.UTF-8
+#export LANGUAGE=de_DE.UTF-8
+#export LANG=de_DE.UTF-8
+
+export LANGUAGE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=$LANG
 
 # ==========================
 # = Common Shell Resources =
@@ -79,3 +82,8 @@ source $(brew --prefix nvm)/nvm.sh
 
 # export PATH=/Users/jens/Library/Python/2.7/bin:${PATH}
 # . ${HOME}/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
+
+# boot2docker
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=/Users/jens/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
