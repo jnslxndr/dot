@@ -63,7 +63,7 @@ export TODO_DIR=${HOME}"/Documents/todo"
 . $HOME/.radio
 
 # Import Homebrew specifics!
-# source ${HOME}/.brewrc
+source ${HOME}/.brewrc
 
 # RVM
 if [[ -s $HOME/.rvm/scripts/rvm ]]; then
@@ -72,13 +72,17 @@ fi
 export PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
 
 # for go
-# export GOROOT=$HOMEBREW/opt/go/libexec
-# export GOPATH=$HOME/go
-# export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+export GOROOT=$HOMEBREW/opt/go/libexec
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+gocd () { cd `go list -f '{{.Dir}}' $1` }
 
 # NVM
-# export NVM_DIR=~/.nvm
-# source $(brew --prefix nvm)/nvm.sh
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
+# AUTOENV
+source /usr/local/opt/autoenv/activate.sh
 
 # export PATH=/Users/jens/Library/Python/2.7/bin:${PATH}
 # . ${HOME}/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh

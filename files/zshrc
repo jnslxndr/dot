@@ -134,6 +134,9 @@ plugins=(brew osx git-flow cake git cucknorris battery autoenv coffee bower)
 
 source $ZSH/oh-my-zsh.sh
 
+# resolve conflict with go's gb tool
+unalias gb
+
 # Customize to your needs...
 
 export HISTSIZE=100000
@@ -151,7 +154,9 @@ unsetopt correct
 unsetopt correct_all
 
 # git flow completions
-source ${HOME}/.homebrew/share/zsh/site-functions
+source ${HOMEBREW}/share/zsh/site-functions
 
 # actual profile stuff
 source ${HOME}/.zprofile
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

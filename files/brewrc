@@ -1,21 +1,6 @@
 # ============================================================================
 # === To use Homebrew ===
-HOMEBREW=$HOME/.homebrew
-
-# export NODE_PATH=$HOMEBREW/lib/node
+HOMEBREW=`brew --prefix`
 
 ## Utils installed through Python & Homebrew
-PATH=$HOMEBREW/bin:$HOMEBREW/sbin:$PATH
-#PATH=$HOMEBREW/share/npm/bin:$PATH
-
-export PATH
-
-# export PKG_CONFIG_PATH=$HOMEBREW/lib:$HOMEBREW/include:$PKG_CONFIG_PATH
-
-## Explicitly set include and library paths for gcc
-# export LIBRARY_PATH=$HOMEBREW/lib:$LIBRARY_PATH
-# export LD_LIBRARY_PATH=$HOMEBREW/lib:$LD_LIBRARY_PATH
-# export DYLD_LIBRARY_PATH=$HOMEBREW/lib:$LD_LIBRARY_PATH
-# export C_INCLUDE_PATH=$HOMEBREW/include:$C_INCLUDE_PATH
-# export CPP_INCLUDE_PATH=$HOMEBREW/include:$CPP_INCLUDE_PATH
-
+export PATH=$HOMEBREW/sbin:$PATH
