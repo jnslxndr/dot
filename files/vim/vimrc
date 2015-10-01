@@ -2,10 +2,8 @@
 
 set nocompatible                  " Must come first because it changes other options.
 
-"""""""""""" Vundle Config """"""""""""""""""""""""""""""""
+"""""""""""" Vundle Config
 filetype off "required by vundle
-
-" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
@@ -16,6 +14,7 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
+Plugin 'vim-scripts/Solarized'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -67,8 +66,9 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*Cap
 
 " Set the colorscheme
 set background=dark
+colorscheme solarized
 " colorscheme pink
-colorscheme topfunky-light
+" colorscheme topfunky-light
 " colorscheme Tomorrow
 " colorscheme Tomorrow-Night-Blue
 " colorscheme Tomorrow-Night-Bright
