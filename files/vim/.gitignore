@@ -3,3 +3,4 @@
 # Ignore the history stuff too
 .netrwhist
 
+bundle/
