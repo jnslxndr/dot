@@ -2,12 +2,39 @@
 
 set nocompatible                  " Must come first because it changes other options.
 
-silent! call pathogen#runtime_append_all_bundles()
 
+"""""""""""" Vundle Config """"""""""""""""""""""""""""""""
+filetype off "required by vundle
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+" Git plugin not hosted on GitHub
+Plugin 'git://git.wincent.com/command-t.git'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+
+Plugin 'scrooloose/syntastic'
+Plugin 'kien/ctrlp.vim'
+Plugin 'bling/vim-airline'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+"""""""""""""""" Normal configuration
 syntax enable                     " Turn on syntax highlighting.
-filetype plugin indent on         " Turn on file type detection.
-
-runtime macros/matchit.vim        " Load the matchit plugin.
 
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
@@ -52,9 +79,7 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*Cap
 
 
 " Set the colorscheme
-" For for solarized there must also be a background set
-" set background=dark
-" colorscheme railscasts
+set background=dark
 " colorscheme pink
 colorscheme topfunky-light
 " colorscheme Tomorrow
@@ -87,25 +112,14 @@ map <leader>tm :tabmove
 " get an empty buffer
 map <leader>nb :bp<bar>sp<bar>bn<bar>bd<CR>
 
-" Uncomment to use Jamis Buck's file opening plugin
-" map <Leader>t :FuzzyFinderTextMate<Enter>
-
 " Automatic fold settings for specific files. Uncomment to use.
-" autocmd FileType ruby setlocal foldmethod=syntax
-" autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
-
-" For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
-" autocmd BufNewFile,BufRead *_spec.rb compiler rspec
+autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
 
 " Map identation key for visual mode
 vmap > >gv
 vmap < <gv
+
 " Map the Tab to it also:
 vmap <Tab> >gv
 vmap <A-Tab> <gv
-
-" Use powerline:
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
 
