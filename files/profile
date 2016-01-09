@@ -32,30 +32,16 @@ export GIT_EDITOR='vim'
 
 # set PATH so it includes user's private bin if it exists
 if [ -d ${HOME}/_bin ] ; then
-    PATH=${HOME}/_bin:${PATH}
+    export PATH=$HOME/_bin:${PATH}
     # Git deploy (https://github.com/aizatto/git-deploy.git)
-    PATH=${HOME}/_bin/git-deploy/bin:${PATH}
+    export PATH=$HOME/_bin/git-deploy/bin:${PATH}
 fi
-
-# Pear PHP Packages
-PATH=/usr/local/pear/bin:${PATH}
-
-# xgettext
-PATH=/Applications/Poedit.app/Contents/MacOS:${PATH}
-
-# finally export:
-export PATH
-
-# ========================================================================
-# === Nodejs ===
-# export NODE_PATH="$(npm root -g)"
-
 
 # ========================================================================
 # === My Own ===
 TODOTXT_PLAIN=0 # shut off plain mode and use fancy colors
 export TODOTXT_PLAIN
-export TODO_DIR=${HOME}"/Documents/todo"
+export TODO_DIR=$HOME"/Documents/todo"
 
 
 # ========================================================================
@@ -64,12 +50,6 @@ export TODO_DIR=${HOME}"/Documents/todo"
 
 # Import Homebrew specifics!
 source ${HOME}/.brewrc
-
-# RVM
-if [[ -s $HOME/.rvm/scripts/rvm ]]; then
-  source $HOME/.rvm/scripts/rvm
-fi
-export PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
 
 # for go
 export GOROOT=$HOMEBREW/opt/go/libexec
@@ -84,10 +64,11 @@ source $(brew --prefix nvm)/nvm.sh
 # AUTOENV
 source /usr/local/opt/autoenv/activate.sh
 
-# export PATH=/Users/jens/Library/Python/2.7/bin:${PATH}
-# . ${HOME}/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
+# Extra PATH
+export PATH="/usr/local/sbin:$PATH"
 
-# boot2docker
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/jens/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
+# RVM
+export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
+if [[ -s $HOME/.rvm/scripts/rvm ]]; then
+  source $HOME/.rvm/scripts/rvm
+fi

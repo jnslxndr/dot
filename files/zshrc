@@ -157,6 +157,4 @@ unsetopt correct_all
 source ${HOMEBREW}/share/zsh/site-functions
 
 # actual profile stuff
-source ${HOME}/.zprofile
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+# source ${HOME}/.zprofile
