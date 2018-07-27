@@ -158,3 +158,9 @@ source ${HOMEBREW}/share/zsh/site-functions
 
 # actual profile stuff
 # source ${HOME}/.zprofile
+
+alias dokku='bash $HOME/.dokku/contrib/dokku_client.sh'
+
+# tabtab source for electron-forge package
+# uninstall by removing these lines or running `tabtab uninstall electron-forge`
+[[ -f /Users/jns/Projects/arnold/repertoire/text-fields/node_modules/ember-electron/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /Users/jns/Projects/arnold/repertoire/text-fields/node_modules/ember-electron/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh
