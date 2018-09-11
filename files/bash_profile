@@ -1,1 +1,4 @@
 source .profile
+if [[ -s /etc/skel/.bashrc ]]; then
+  source /etc/skel/.bashrc
+fi
