@@ -50,20 +50,12 @@ export TODO_DIR=$HOME"/Documents/todo"
 . $HOME/.radio
 
 # Import Homebrew specifics!
-source ${HOME}/.brewrc
-
-# for go
-export GOROOT=$HOMEBREW/opt/go/libexec
-export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-gocd () { cd `go list -f '{{.Dir}}' $1` }
-
-# NVM
-#export NVM_DIR=~/.nvm
-#source $(brew --prefix nvm)/nvm.sh
+# source ${HOME}/.brewrc
 
 # AUTOENV
-source /usr/local/opt/autoenv/activate.sh
+if [[ -s /usr/local/opt/autoenv/activate.sh ]]; then
+  source /usr/local/opt/autoenv/activate.sh
+fi
 
 # Extra PATH
 export PATH="/usr/local/sbin:$PATH"
@@ -77,3 +69,10 @@ fi
 export PATH="$HOME/.cargo/bin:$PATH"
 
 eval "$(fasd --init auto)"
+
+# NPM
+NPM_PACKAGES="${HOME}/.npm-packages"
+export PATH="$NPM_PACKAGES/bin:$PATH"
+unset MANPATH # delete if you already modified MANPATH elsewhere in your config
+export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+
