@@ -1,4 +1,5 @@
-source .profile
+source ${HOME}/.profile
+fasd
 if [[ -s /etc/skel/.bashrc ]]; then
   source /etc/skel/.bashrc
 fi
