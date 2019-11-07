@@ -48,7 +48,7 @@ set laststatus=2                  " Show the status line all the time
 
 
 " Set the colorscheme
-set background=light
+" set background=light
 " colorscheme solarized
 " colorscheme pink
 " colorscheme topfunky-light
