@@ -2,9 +2,6 @@
 # = General DotFile for Jens =
 # ============================
 
-#export LANGUAGE=de_DE.UTF-8
-#export LANG=de_DE.UTF-8
-
 export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=$LANG
@@ -14,16 +11,9 @@ export LC_ALL=$LANG
 source $HOME/.alias
 
 # ========================================================================
-# === Set EDITOR ....
-export EDITOR='subl -w'
-
-
-# ========================================================================
 # === GIT Additions & Coloring ===
 
-# to use textmate as the default $GIT_EDITOR
-# export GIT_EDITOR='mate -wl1'
-# export GIT_EDITOR='vim'
+# vim is our git editor
 export GIT_EDITOR='vim'
 
 # ========================================================================
@@ -40,14 +30,14 @@ export PATH="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin":
 
 # ========================================================================
 # === My Own ===
-TODOTXT_PLAIN=0 # shut off plain mode and use fancy colors
-export TODOTXT_PLAIN
-export TODO_DIR=$HOME"/Documents/todo"
+# TODOTXT_PLAIN=0 # shut off plain mode and use fancy colors
+# export TODOTXT_PLAIN
+# export TODO_DIR=$HOME"/Documents/todo"
 
 
 # ========================================================================
 # === Radios:
-. $HOME/.radio
+# . $HOME/.radio
 
 # Import Homebrew specifics!
 source ${HOME}/.brewrc
@@ -56,24 +46,16 @@ source ${HOME}/.brewrc
 export GOROOT=$HOMEBREW/opt/go/libexec
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-gocd () { cd `go list -f '{{.Dir}}' $1` }
 
-# NVM
-#export NVM_DIR=~/.nvm
-#source $(brew --prefix nvm)/nvm.sh
-
-# AUTOENV
-source /usr/local/opt/autoenv/activate.sh
+# # AUTOENV
+# source /usr/local/opt/autoenv/activate.sh
 
 # Extra PATH
 export PATH="/usr/local/sbin:$PATH"
-
-# RVM
-export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
-if [[ -s $HOME/.rvm/scripts/rvm ]]; then
-  source $HOME/.rvm/scripts/rvm
-fi
-
+export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# git flow completions
+source ${HOMEBREW}/share/zsh/site-functions
 
 eval "$(fasd --init auto)"

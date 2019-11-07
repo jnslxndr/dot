@@ -2,26 +2,6 @@
 
 set nocompatible                  " Must come first because it changes other options.
 
-"""""""""""" Vundle Config
-filetype off "required by vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-
-"Plugin 'tpope/vim-fugitive'
-Plugin 'git://git.wincent.com/command-t.git'
-"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'scrooloose/syntastic'
-"Plugin 'kien/ctrlp.vim'
-"Plugin 'bling/vim-airline'
-Plugin 'vim-scripts/Solarized'
-"Plugin 'fatih/vim-go'
-"Plugin 'Valloric/YouCompleteMe'
-Plugin 'rust-lang/rust.vim'
-
-call vundle#end()            " required
-filetype plugin indent on    " required
-
 """""""""""""""" Normal configuration
 syntax enable                     " Turn on syntax highlighting.
 
@@ -64,12 +44,12 @@ set expandtab                    " Use spaces instead of tabs
 set laststatus=2                  " Show the status line all the time
 
 " Useful status information at bottom of screen
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+"set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 
 " Set the colorscheme
 set background=light
-colorscheme solarized
+" colorscheme solarized
 " colorscheme pink
 " colorscheme topfunky-light
 " colorscheme Tomorrow

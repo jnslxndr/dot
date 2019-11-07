@@ -4,3 +4,6 @@ HOMEBREW=`brew --prefix`
 
 ## Utils installed through Python & Homebrew
 export PATH=$HOMEBREW/sbin:$PATH
+
+## Install casks in user space
+export HOMEBREW_CASK_OPTS="--appdir=~/Applications"

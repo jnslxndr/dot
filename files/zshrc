@@ -132,10 +132,7 @@ export CASE_SENSITIVE="true"
 plugins=(brew osx git-flow cake git cucknorris battery autoenv coffee bower)
 # plugins=(osx git github)
 
-source $ZSH/oh-my-zsh.sh
-
-# resolve conflict with go's gb tool
-unalias gb
+# source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
@@ -152,15 +149,3 @@ zstyle ':completion:*:approximate:*' max-errors 10 numeric
 # No correction of misspelled commands and arguments
 unsetopt correct
 unsetopt correct_all
-
-# git flow completions
-source ${HOMEBREW}/share/zsh/site-functions
-
-# actual profile stuff
-# source ${HOME}/.zprofile
-
-alias dokku='bash $HOME/.dokku/contrib/dokku_client.sh'
-
-# tabtab source for electron-forge package
-# uninstall by removing these lines or running `tabtab uninstall electron-forge`
-[[ -f /Users/jns/Projects/arnold/repertoire/text-fields/node_modules/ember-electron/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /Users/jns/Projects/arnold/repertoire/text-fields/node_modules/ember-electron/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh
