@@ -55,7 +55,8 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# git flow completions
-source ${HOMEBREW}/share/zsh/site-functions
+# ZSH extra functions installed via oh-my-zsh
+# source ${HOMEBREW}/share/zsh/site-functions
 
+# TODO: check if fasd is installed
 eval "$(fasd --init auto)"
