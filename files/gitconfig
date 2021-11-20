@@ -9,7 +9,7 @@
   whitespace = fix
 
 [user]
-	name = jens
+	name = jens alexander ewald
 	email = jens@lea.io
 
 [color "branch"]
@@ -39,6 +39,7 @@
   cl = clone
   cf = commit --no-verify
   c  = commit
+  qc = commit -m '.'
   call= commit -a
   ca = commit --amend
   a = add
@@ -116,3 +117,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[pull]
+	rebase = true
