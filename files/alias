@@ -25,37 +25,16 @@ alias gaa="git add -p"
 alias gs="git status -s"
 alias gss="git status"
 alias gsd="git diff --staged"
+alias gpa="git push"
 alias gpa="git push --all"
 alias gta="git tag -a"
 alias gmno="git merge --no-ff"
-alias gf="git flow"
-alias gff="git flow feature"
-alias gffs="git flow feature start"
-alias gfff="git flow feature finish"
 
 # =================================
 # = Various Helpers and Shortcuts =
 # =================================
 # show calender with weeks:
 alias kw="ncal -w"
-
-
-## Node Webkit
-# alias to nw
-alias nw="/Applications/node-webkit.app/Contents/MacOS/node-webkit"
-
-## Sublime Text
-alias subl="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
-
-## ifconfig for en0
-alias net="ifconfig en0"
-
-## todo.txt
-alias t="todo.sh"
-alias ta="t add"
-alias te="t edit"
-alias tl="t ls"
-alias tw="t ls @work"
 
 ## network processes
 alias netps="sudo lsof -i -n -P"
@@ -65,3 +44,7 @@ alias brewback="brews | sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/ /g'"
 
 # Visual Studio Code
 alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
+
+## Sublime Text
+alias subl="'${HOME}/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
+

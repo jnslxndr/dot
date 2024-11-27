@@ -9,8 +9,9 @@
   whitespace = fix
 
 [user]
-	name = jens alexander ewald
-	email = jens@lea.io
+	name = jens
+	email = hello@somesmall.studio
+	username = jens
 
 [color "branch"]
   current = yellow reverse
@@ -67,21 +68,12 @@
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
   lp   = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   ls   = ls-files
+  lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+  lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+  lg = !"git lg1"
 
   # REMOTES
   up = remote update
-
-  # SVN
-  spull = !git-svn fetch && git-svn rebase
-  spush = !git-svn dcommit
-  switch = !legit switch \"$@\"
-  branches = !legit branches
-  sprout = !legit sprout \"$@\"
-  unpublish = !legit unpublish \"$@\"
-  harvest = !legit harvest \"$@\"
-  sync = !legit sync \"$@\"
-  publish = !legit publish \"$@\"
-  graft = !legit graft \"$@\"
 
   unpack-refs = "!bash -c 'IFS=$''\\n''; for f in $(git show-ref --heads); do /bin/echo ''Writing  '' $(echo $f | cut -c42-); echo $(echo $f | cut -c1-40) > \"${GIT_DIR:-.git}/$(echo $f | cut -c42-)\"; done'"
 	wa = log --diff-filter=A
@@ -90,11 +82,8 @@
 	tool = opendiff
 
 [github]
-	user = "jens-a-e"
+	user = "jnslxndr"
   password = !security 2>&1 >/dev/null find-generic-password -gs github.password | ruby -e 'print $1 if STDIN.gets =~ /^password: \\\"(.*)\\\"$/'
-
-[ghi]
-  token    = !security 2>&1 >/dev/null find-generic-password -gs ghi.token | ruby -e 'print $1 if STDIN.gets =~ /^password: \\\"(.*)\\\"$/'
 
 [push]
 	default = current
@@ -117,5 +106,9 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
 [pull]
-	rebase = true
+	rebase = false
+
+[init]
+	defaultBranch = main

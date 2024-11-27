@@ -2,3 +2,5 @@ source ${HOME}/.profile
 if [[ -s /etc/skel/.bashrc ]]; then
   source /etc/skel/.bashrc
 fi
+. "$HOME/.cargo/env"
+. "/Users/jns/.deno/env"
