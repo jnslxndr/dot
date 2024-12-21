@@ -1,3 +1,6 @@
+# Source the main .profile first
+. ~/.profile
+
 # Basic zsh settings
 export HISTSIZE=100000
 export SAVEHIST=100000
@@ -16,22 +19,12 @@ zstyle ':completion:*:approximate:*' max-errors 10 numeric
 unsetopt correct
 unsetopt correct_all
 
-# Python
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-# Addtional bin paths from home brew
-export PATH="/opt/homebrew/opt/php@8.0/bin:$PATH"
-export PATH="/opt/homebrew/opt/php@8.0/sbin:$PATH"
-export PATH="/opt/homebrew/opt/php@8.2/bin:$PATH"
-export PATH="/opt/homebrew/opt/php@8.2/sbin:$PATH"
-export PATH="/opt/homebrew/opt/go@1.20/bin:$PATH"
-
-# Deno added this
-. "/Users/jns/.deno/env"
 # Initialize zsh completions (added by deno install script)
 autoload -Uz compinit
 compinit
-source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+
+# init starship
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
+eval "$(starship init zsh)"
+
 
