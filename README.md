@@ -1,1 +1,3 @@
-My private little dotfile garden
+# My private little dotfile garden
+
+Run `./linkall.sh` to install.
