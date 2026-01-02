@@ -17,7 +17,7 @@ export EDITOR=nvim
 # === GIT Additions & Coloring ===
 
 # vim is our git editor
-export GIT_EDITOR='vim'
+export GIT_EDITOR='nvim'
 
 # ========================================================================
 # === PATH Manipulations ===
@@ -49,12 +49,6 @@ export HOMEBREW_NO_ENV_HINTS=1
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-# AUTOENV
-# source /usr/local/opt/autoenv/activate.sh
-
-# Ruby
-# export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-# export PATH="/opt/homebrew/lib/ruby/gems/3.2.0/bin/:$PATH"
 
 . "$HOME/.cargo/env"
 
@@ -76,8 +70,3 @@ export PATH="/opt/homebrew/opt/go@1.20/bin:$PATH"
 # Deno added this
 . "/Users/jns/.deno/env"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/jns/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jns/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/jns/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jns/google-cloud-sdk/completion.zsh.inc'; fi
