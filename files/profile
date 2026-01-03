@@ -1,6 +1,6 @@
-# ============================
-# = General DotFile for Jens =
-# ============================
+# ===========================
+# = General DotFile Profile =
+# ===========================
 
 export LANGUAGE=en_GB.UTF-8
 export LANG=en_GB.UTF-8
@@ -8,37 +8,12 @@ export LC_ALL=$LANG
 
 # Use Neovim as default editor
 export EDITOR=nvim
-
-# ================
-# = Load aliases =
-. "$HOME"/.alias
-
-# ================================
-# === GIT Additions & Coloring ===
-
-# vim is our git editor
 export GIT_EDITOR='nvim'
 
-# ========================================================================
-# === PATH Manipulations ===
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "${HOME}"/_bin ]; then
-  export PATH=$HOME/_bin:${PATH}
-  # Git deploy (https://github.com/aizatto/git-deploy.git)
-  export PATH=$HOME/_bin/git-deploy/bin:${PATH}
-fi
-
-export PATH="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin":$PATH
-
-# ========================================================================
-# === My Own ===
-# TODOTXT_PLAIN=0 # shut off plain mode and use fancy colors
-# export TODOTXT_PLAIN
-# export TODO_DIR=$HOME"/Documents/todo"
+# === PATH Exports ===
 
 # Extra PATH
-# export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # Homebrew
@@ -50,23 +25,37 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-. "$HOME/.cargo/env"
+# Rust Cargo
+if [ -d "${HOME}/.cargo" ]; then
+  . "$HOME/.cargo/env"
+fi
 
-# composer PHP
+# PHP and Composer
 # Addtional bin paths from home brew
 # export PATH="/opt/homebrew/opt/php@8.0/bin:$PATH"
 # export PATH="/opt/homebrew/opt/php@8.0/sbin:$PATH"
 # export PATH="/opt/homebrew/opt/php@8.2/bin:$PATH"
 # export PATH="/opt/homebrew/opt/php@8.2/sbin:$PATH"
-export PATH="/opt/homebrew/opt/php@8.3/bin:$PATH"
-export PATH="/opt/homebrew/opt/php@8.3/sbin:$PATH"
+# export PATH="/opt/homebrew/opt/php@8.3/bin:$PATH"
+# export PATH="/opt/homebrew/opt/php@8.3/sbin:$PATH"
 export PATH=~/.composer/vendor/bin:$PATH
 
 # Golang
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
-export PATH="/opt/homebrew/opt/go@1.20/bin:$PATH"
 
-# Deno added this
+# Deno
+if [ -d "${HOME}/.deno" ]; then
 . "/Users/jns/.deno/env"
+fi
+
+# ================
+# = Load aliases =
+. "$HOME"/.alias
+
+# ========================================================================
+# === TODO TXT ===
+# TODOTXT_PLAIN=0 # shut off plain mode and use fancy colors
+# export TODOTXT_PLAIN
+# export TODO_DIR=$HOME"/Documents/todo"
 

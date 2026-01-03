@@ -5,9 +5,9 @@
 export HISTSIZE=100000
 export SAVEHIST=100000
 export INC_APPEND_HISTORY=true
-export HIST_IGNORE_DUPS=true
+export HIST_IGNORE_DUPS=false
 
-# Add deno completions to search path
+# Add user specific completions to search path
 if [[ ":$FPATH:" != *":/Users/jns/.zsh/completions:"* ]]; then export FPATH="/Users/jns/.zsh/completions:$FPATH"; fi
 
 # Fuzzy matching of completions for when you mistype them
@@ -27,7 +27,7 @@ compinit
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init zsh)"
 
-# fzf
+# use fzf for zsh
 source <(fzf --zsh)
 
 # pnpm
