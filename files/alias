@@ -3,15 +3,15 @@
 # = * used with different shells =
 # ================================
 
+# activate mise shell
+alias miss='eval "$(mise activate zsh)"'
+
 #disk space
 alias space='df -h|grep "\/dev\/disk"'
 
 # shell helpers
 alias ll="ls -lhp"
 alias la="ls -lAhp"
-
-# Rails aliases
-#alias r="rails"
 
 # OSX shorts
 alias c="pbcopy"
@@ -41,12 +41,6 @@ alias netps="sudo lsof -i -n -P"
 
 # backup installed homebrew packages for reinstall
 alias brewback="brews | sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/ /g'"
-
-# Visual Studio Code
-alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
-
-## Sublime Text
-alias subl="'${HOME}/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
 
 # Configure aliases for eza
 # eza (better 'ls')
